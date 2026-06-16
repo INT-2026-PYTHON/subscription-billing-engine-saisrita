@@ -1,64 +1,24 @@
-
 [project]
-name = "billing-engine"
-version = "1.0.0"
-description = "A Subscription Billing Engine for managing customers, subscriptions, invoices, and payments."
-readme = "README.md"
+name = "billing-engine-starter"
+version = "0.1.0"
+description = "Capstone: Subscription Billing Engine"
 requires-python = ">=3.11"
-
-authors = [
-    { name = "Your Name", email = "your.email@example.com" }
-]
-
-keywords = [
-    "billing",
-    "subscription",
-    "invoice",
-    "payment",
-    "finance"
-]
-
-classifiers = [
-    "Development Status :: 4 - Beta",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.11",
-    "Operating System :: OS Independent",
-    "License :: OSI Approved :: MIT License",
-]
-
 dependencies = [
-    "reportlab>=4.0"
+    "reportlab>=4.0",
 ]
 
 [project.optional-dependencies]
 dev = [
     "pytest>=7.4",
     "pytest-cov>=4.1",
-    "black>=24.0",
-    "ruff>=0.5.0",
 ]
 
 [project.scripts]
 billing = "billing_engine.cli:main"
 
 [build-system]
-requires = ["setuptools>=68", "wheel"]
+requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 include = ["billing_engine*"]
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-python_files = ["test_*.py"]
-
-[tool.coverage.run]
-source = ["billing_engine"]
-
-[tool.black]
-line-length = 88
-target-version = ["py311"]
-
-[tool.ruff]
-line-length = 88
-target-version = "py311"
